@@ -1,0 +1,20 @@
+(in-package :utils)
+
+(defmacro assert-true (x)
+  `(assert (equal t ,x)))
+(defmacro assert-false (x)
+  `(assert (equal nil ,x)))
+
+(defmacro assert-equal (x y)
+  `(assert (equal ,x ,y)))
+(defmacro assert-eq (x y)
+  `(assert (eq ,x ,y)))
+(defmacro assert-eql (x y)
+  `(assert (eql ,x ,y)))
+
+(defmacro assert-nequal (x y)
+  `(assert (not (equal ,x ,y))))
+(defmacro assert-neq (x y)
+  `(assert (not (eq ,x ,y))))
+(defmacro assert-neql (x y)
+  `(assert (not (eql ,x ,y))))

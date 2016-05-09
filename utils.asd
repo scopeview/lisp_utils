@@ -1,0 +1,46 @@
+(asdf:defsystem :utils
+  :version "0.0.1"
+  :serial t
+  :components ((:file "package")
+	       (:file "assert")
+	       (:file "basic")
+	       (:file "class")
+	       (:file "quote")
+	       (:file "debug")
+	       (:file "macroexpand")
+	       (:file "macro-function")
+	       (:file "with-gensyms")
+	       (:file "with-once")
+	       (:file "symbol-concatenate")
+	       (:file "function-lambda-list")
+	       (:file "shift")
+	       (:file "transpose")
+	       (:file "iterate")
+	       (:file "unique-id")
+	       (:file "number")
+
+	       ;; 
+	       (:file "lxml")
+	       (:file "file")
+	       (:file "dir")
+	       (:file "string")
+	       (:file "stream")
+
+	       ;; 
+	       (:file "generic")
+	       (:file "generic-streamer")
+	       (:file "generic-cstreamer")
+
+	       (:file "time")
+	       (:file "character")
+	       (:file "match")
+	       (:file "matcher")
+	       (:file "matcher-predefined")
+	       (:file "filterate")
+	       (:file "filterate-furthest")
+	       (:file "filter")
+	       (:file "filter-composer")
+	       ;; (:file "cons-list")
+	       )
+  ;; :depends-on ("")
+  )

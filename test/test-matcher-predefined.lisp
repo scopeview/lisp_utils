@@ -1,0 +1,46 @@
+(in-package :utils-test)
+
+(lisp-unit2:define-test utils-test::matcher-predefined-identifier
+    (:tags '(utils-test::tag-matcher))
+  (let* (;; (input-1 nil)
+	 ;; (input-2 "")
+	 (input-3 (string-to-list "h"))
+	 (input-4 (string-to-list "h1"))
+	 (input-5 (string-to-list "hh1"))
+	 (input-6 (string-to-list "1"))
+	 (input-7 (string-to-list "1h")))
+    (lisp-unit2:assert-eql 'full-match (matcher-identifier input-3))
+    (lisp-unit2:assert-eql 'full-match (matcher-identifier input-4))
+    (lisp-unit2:assert-eql 'full-match (matcher-identifier input-5))
+    (lisp-unit2:assert-eql 'not-match (matcher-identifier input-6))
+    (lisp-unit2:assert-eql 'not-match (matcher-identifier input-7))))
+
+
+(lisp-unit2:define-test utils-test::matcher-predefined-number
+    (:tags '(utils-test::tag-matcher))
+  (let* (;; (input-1 nil)
+	 ;; (input-2 "")
+	 (input-3 (string-to-list "1"))
+	 (input-4 (string-to-list "12"))
+	 (input-5 (string-to-list "123"))
+	 (input-6 (string-to-list "a"))
+	 (input-7 (string-to-list "1a")))
+    (lisp-unit2:assert-eql 'full-match (matcher-number input-3))
+    (lisp-unit2:assert-eql 'full-match (matcher-number input-4))
+    (lisp-unit2:assert-eql 'full-match (matcher-number input-5))
+    (lisp-unit2:assert-eql 'not-match (matcher-number input-6))
+    (lisp-unit2:assert-eql 'not-match (matcher-number input-7))))
+
+
+(lisp-unit2:define-test utils-test::matcher-predefined-string
+    (:tags '(utils-test::tag-matcher))
+  (let* (;; (input-1 nil)
+	 ;; (input-2 "")
+	 (input-3 (string-to-list "\"\""))
+	 (input-4 (string-to-list "\"12\""))
+	 (input-5 (string-to-list "a"))
+	 (input-6 (string-to-list "1")))
+    (lisp-unit2:assert-eql 'full-match (matcher-string input-3))
+    (lisp-unit2:assert-eql 'full-match (matcher-string input-4))
+    (lisp-unit2:assert-eql 'not-match (matcher-string input-5))
+    (lisp-unit2:assert-eql 'not-match (matcher-string input-6))))
